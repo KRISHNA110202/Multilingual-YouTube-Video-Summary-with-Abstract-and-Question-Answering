@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Languages</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Set background color */
+        }
+        .container {
+            width: 800px; /* Set container width */
+            padding: 20px; /* Set container padding */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 8px; /* Add border radius */
+            background-color: #fff; /* Set container background color */
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 80vh; /* Set maximum height */
+        }
+        h2 {
+            text-align: center;
+            color: green; /* Set title color */
+        }
+        p {
+            text-align: center;
+            font-size: 18px; /* Set paragraph font size */
+        }
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Create three columns */
+            gap: 20px; /* Set gap between items */
+        }
+        li {
+            margin-bottom: 10px;
+            text-align: center; /* Center-align list items */
+        }
+        button[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px; /* Set button font size */
+            background-color: #007bff; /* Set button background color */
+            color: #fff; /* Set button text color */
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Make all buttons the same width */
+            box-sizing: border-box; /* Include padding in button width */
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Change button background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Available Languages</h2>
+        <form action="/translate" method="POST">
+            <p>Please select a language to translate to:</p>
+            <ul>
+                {% for language, translations in languages %}
+                <li>
+                    <ul>
+                        {% for translation in translations %}
+                        <li>
+                            <!-- Pass along the language code as the value of the button -->
+                            <button type="submit" name="target_language" value="{{ translation[1] }}">{{ translation[0] }}</button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- Also include the youtube_link in the form data -->
+            <input type="hidden" name="youtube_link" value="{{ request.form.youtube_link }}">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translated Transcript</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Set background color */
+        }
+        .container {
+            width: 800px; /* Set container width */
+            padding: 20px; /* Set container padding */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 8px; /* Add border radius */
+            background-color: #fff; /* Set container background color */
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 80vh; /* Set maximum height */
+        }
+        h2 {
+            text-align: center;
+            color: green; /* Set title color */
+            margin-top: 0; /* Remove default margin */
+        }
+        p {
+            text-align: justify; /* Justify-align text */
+            font-size: 18px; /* Set paragraph font size */
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .abstract-btn {
+            padding: 10px 20px;
+            font-size: 16px; /* Set button font size */
+            background-color: #007bff; /* Set button background color */
+            color: #fff; /* Set button text color */
+            border: none;
+            cursor: pointer;
+        }
+        .abstract-btn:hover {
+            background-color: #0056b3; /* Change button background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Translated Transcript</h2>
+        <p>{{ translated_text }}</p>
+        <div class="btn-container">
+            <a href="/abstract?youtube_link={{ request.form.youtube_link }}" class="abstract-btn">View Abstract</a>
+        </div>
+    </div>
+</body>
+</html>

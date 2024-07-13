@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif; /* Set a default font family */
+            line-height: 1.6; /* Set the line height for better readability */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f8f9fa; /* Set a light background color */
+            color: #333; /* Set the default text color */
+        }
+        .container {
+            width: 80%; /* Set container width */
+            margin: 0 auto; /* Center container horizontally */
+            padding: 20px; /* Add padding to the container */
+            background-color: #fff; /* Set container background color */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+        }
+        h1 {
+            text-align: center; /* Center align the heading */
+            color: #007bff; /* Set heading color */
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+        p {
+            text-align: justify; /* Justify-align the paragraph */
+            font-size: 18px; /* Set the font size */
+            margin-bottom: 20px; /* Add space below the paragraph */
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 12px 24px; /* Increase padding for better clickability */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for anchor tag */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+            display: inline-block; /* Ensure button behaves like a block element */
+        }
+        .button:hover {
+            background-color: #0056b3; /* Change button background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Abstract Page</h1>
+        <div>
+            <p>{{ summarized_text }}</p>
+        </div>
+        <div class="button-container">
+            <a href="/question_answer?youtube_link={{ youtube_link }}" class="button">Question & Answer</a>
+        </div>
+    </div>
+</body>
+</html>
